@@ -4,6 +4,7 @@ export const headTable = [
     convert: 'przelicznik',
     code: 'kod',
     value: 'wartość',
+    convert: 'przelicznik',
     remove: 'usuń',
   },
 ];
