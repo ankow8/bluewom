@@ -11,12 +11,12 @@ const ListWrapper = () => (
       value={headTable[0].value}
       convert={headTable[0].convert}
     />
-    {data.map((item) => (
+    {data.map(({name, code, value, convert}) => (
       <ListItem
-        name={item.name}
-        code={item.code}
-        value={item.value}
-        convert={item.convert}
+        name={name}
+        code={code}
+        value={value}
+        convert={convert}
       />
     ))}
   </ul>
