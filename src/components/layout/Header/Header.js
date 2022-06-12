@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.scss';
+import styles from './Header.module.scss';
 
 const Header = () => (
-  <h1 className="header">
+  <h1 className={styles.header}>
    Currency list
   </h1>
 );

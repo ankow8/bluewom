@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ListItem.scss';
+import styles from './ListItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const ListItem = (props) => (
-  <li className="listItemWrapper">
-    <div className="list-line">
-      <div className="line name">{props.name}</div>
-      <div className="line code">{props.code}</div>
-      <div className="line value">{props.value}</div>
-      <div className="line convert">{props.convert}</div>
-      <div className="line remove">
+const ListItem = ({name, code, value, convert}) => (
+  <li className={styles.listItemWrapper}>
+    <div className={styles.line}>
+      <div className={styles.name}>{name}</div>
+      <div className={styles.code}>{code}</div>
+      <div className={styles.value}>{value}</div>
+      <div className={styles.convert}>{convert}</div>
+      <div className={styles.remove}>
         <a href="#">
-          x<FontAwesomeIcon icon="fas fa-trash" />
+          x{/*<FontAwesomeIcon icon="fas fa-trash" />*/}
         </a>
       </div>
     </div>
@@ -21,10 +21,10 @@ const ListItem = (props) => (
 );
 
 ListItem.propTypes = {
-  name: PropTypes.string,
-  code: PropTypes.string,
-  value: PropTypes.number,
-  convert: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  convert: PropTypes.number.isRequired,
 };
 
 export default ListItem;
