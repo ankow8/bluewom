@@ -24,15 +24,30 @@ input {
 }
 
 .name {
-  max-width: 160px;
+  max-width: 180px;
 }
-/*.code {
-  max-width: 60px;
-}*/
 
-button {
-  border: 0;
-  background-color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+.value {
+  max-width: 80px;
+}
+
+.code {
+  max-width: 60px;
+}
+
+.convert {
+  max-width: 100px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100vs;
+  padding-top: 30px;
+  button {
+    border: 0;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+  }
 }

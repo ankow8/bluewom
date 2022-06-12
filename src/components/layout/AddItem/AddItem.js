@@ -1,31 +1,28 @@
 import React from 'react';
 import styles from './AddItem.module.scss';
 import PropTypes from 'prop-types';
+import { initialState } from '../../../data';
 
 const AddItem = ({submitFn}) => (
   <div className={styles.component}>
     <form autoComplete="off" onSubmit={submitFn}>
       <input className={styles.name} type="text" placeholder="nazwa waluty" name="name" list="name_list" required/>
       <datalist id="name_list">
-        <option value="euro">euro</option>
-        <option value="dolar amerykański">dolar amerykański</option>
-        <option value="frank szwajcarski">frank szwajcarski</option>
-        <option value="hrywna">hrywna</option>
-        <option value="funt szterling">funt szterling</option>
-        <option value="jen japoński">jen japoński</option>
+        {initialState.map(
+          ({name}) => <option key={name} value={name}/>
+        )}
       </datalist>
-      <input placeholder="przelicznik" name="convert" />
       <input className={styles.code} type="text" placeholder="kod" name="code" list="code_list" />
       <datalist id="code_list">
-        <option value="EUR">EUR</option>
-        <option value="USD">USD</option>
-        <option value="CHF">CHF</option>
-        <option value="UAH">UAH</option>
-        <option value="GBP">GBP</option>
-        <option value="JPY">JPY</option>
+        {initialState.map(
+          ({code}) => <option key={code} value={code}/>
+        )}
       </datalist>
-      <input placeholder="wartość waluty" name="value" />
-      <button type="submit">+ dodaj walutę</button>
+      <input className={styles.value} placeholder="wartość" name="value" />
+      <input className={styles.convert} placeholder="przelicznik" name="convert" />
+      <div className={styles.button}>
+        <button type="submit">+ dodaj walutę</button>
+      </div>
     </form>
   </div>
 );

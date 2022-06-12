@@ -3,45 +3,7 @@ import Header from './components/layout/Header/Header';
 import ListWrapper from './components/layout/ListWrapper/ListWrapper';
 import AddItem from './components/layout/AddItem/AddItem';
 import ClearItems from './components/layout/ClearItems/ClearItems';
-
-const initialState = [
-  {
-    name: 'euro',
-    convert: 1,
-    code: 'EUR',
-    value: 4.6030,
-  },
-  {
-    name: 'dolar amerykański',
-    convert: 1,
-    code: 'USD',
-    value: 4.3363,
-  },
-  {
-    name: 'frank szwjacarski',
-    convert: 1,
-    code: 'CHF',
-    value: 4.4292,
-  },
-  {
-    name: 'hrywna',
-    convert: 1,
-    code: 'UAH',
-    value: 0.1467,
-  },
-  {
-    name: 'funt szterling',
-    convert: 1,
-    code: 'GBP',
-    value: 5.4127,
-  },
-  {
-    name: 'jen japoński',
-    convert: 100,
-    code: 'JPY',
-    value: 3.2395,
-  },
-];
+import { initialState } from './data';
 
 class App extends React.Component {
 
@@ -67,6 +29,17 @@ class App extends React.Component {
   };
 
   render() {
+
+    {/*
+    const url = 'http://api.nbp.pl/api/exchangerates/tables/a';
+    fetch(url)
+      .then(rawResponse => rawResponse.json())
+      .then(parsedResponse => {
+        this.webState = parsedResponse[0].rates;
+        console.log(this.webState);
+      });
+      */}
+
     return (
       <div>
         <Header />
